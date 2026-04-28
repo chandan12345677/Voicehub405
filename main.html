@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VoiceW - Super Voice App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- AUTH PAGE -->
+  <section id="authPage" class="page active">
+    <div class="card">
+      <h2>VoiceHub Login</h2>
+      <p>Login with Google (Recommended)</p>
+
+      <button id="googleLoginBtn" class="googleBtn">Login with Google</button>
+
+      <hr style="margin:15px 0;">
+
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Password">
+      <button id="signupBtn">Sign Up</button>
+      <button id="loginBtn">Login</button>
+
+      <p id="authMsg"></p>
+    </div>
+  </section>
+
+  <!-- MAIN APP -->
+  <section id="mainApp" class="page">
+    
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <h2>VoiceHub</h2>
+      <button id="logoutBtn" class="logoutBtn">Logout</button>
+    </header>
+
+    <!-- NAV -->
+    <nav class="navbar">
+      <button class="tabBtn activeTab" data-tab="feedTab">Feed</button>
+      <button class="tabBtn" data-tab="uploadTab">Upload</button>
+      <button class="tabBtn" data-tab="chatTab">Stranger</button>
+      <button class="tabBtn" data-tab="battleTab">Battle</button>
+      <button class="tabBtn" data-tab="profileTab">Profile</button>
+    </nav>
+
+    <!-- FEED TAB -->
+    <div id="feedTab" class="tab active">
+      <h3>🔥 Voice Feed</h3>
+      <div id="feed"></div>
+    </div>
+
+    <!-- UPLOAD TAB -->
+    <div id="uploadTab" class="tab">
+      <h3>🎙 Upload Voice</h3>
+
+      <input type="file" id="voiceFile" accept="audio/*">
+      <input type="text" id="caption" placeholder="Caption / Hashtag (#funny #rap)">
+      <button id="uploadBtn">Upload</button>
+
+      <p id="uploadMsg"></p>
+    </div>
+
+    <!-- CHAT TAB -->
+    <div id="chatTab" class="tab">
+      <h3>💬 Stranger Chat</h3>
+      <button id="findStrangerBtn">Find Stranger</button>
+      <p id="strangerInfo"></p>
+
+      <div id="chatBox"></div>
+
+      <div class="chatInput">
+        <input type="text" id="chatMsg" placeholder="Type message...">
+        <button id="sendChatBtn">Send</button>
+      </div>
+    </div>
+
+    <!-- BATTLE TAB -->
+    <div id="battleTab" class="tab">
+      <h3>⚔ Voice Battles</h3>
+
+      <div class="battleCreateBox">
+        <h4>Create Battle</h4>
+        <input type="file" id="battleVoice1" accept="audio/*">
+        <button id="createBattleBtn">Create Battle</button>
+      </div>
+
+      <h4>🔥 Battle Feed</h4>
+      <div id="battleFeed"></div>
+
+      <h4>🏆 Leaderboard</h4>
+      <div id="leaderboard"></div>
+    </div>
+
+    <!-- PROFILE TAB -->
+    <div id="profileTab" class="tab">
+      <h3>👤 Profile</h3>
+
+      <input type="text" id="username" placeholder="Username">
+      <input type="text" id="bio" placeholder="Bio">
+      <button id="saveProfileBtn">Save Profile</button>
+
+      <p id="profileMsg"></p>
+    </div>
+
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>
